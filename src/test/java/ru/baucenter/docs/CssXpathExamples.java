@@ -1,4 +1,4 @@
-package ru.metro.docs;
+package ru.baucenter.docs;
 
 import org.openqa.selenium.By;
 

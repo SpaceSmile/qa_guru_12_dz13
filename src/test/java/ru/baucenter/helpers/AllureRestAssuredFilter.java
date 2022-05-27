@@ -1,4 +1,4 @@
-package ru.metro.helpers;
+package ru.baucenter.helpers;
 
 import io.qameta.allure.restassured.AllureRestAssured;
 

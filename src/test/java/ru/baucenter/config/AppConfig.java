@@ -1,4 +1,4 @@
-package ru.metro.config;
+package ru.baucenter.config;
 
 import org.aeonbits.owner.Config;
 

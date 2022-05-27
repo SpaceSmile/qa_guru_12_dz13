@@ -1,6 +1,6 @@
-package ru.metro.helpers;
+package ru.baucenter.helpers;
 
-import ru.metro.config.Project;
+import ru.baucenter.config.Project;
 import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;

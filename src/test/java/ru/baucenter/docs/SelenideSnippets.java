@@ -1,4 +1,4 @@
-package ru.metro.docs;
+package ru.baucenter.docs;
 
 import com.codeborne.selenide.*;
 import org.openqa.selenium.Keys;

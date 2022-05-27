@@ -1,9 +1,9 @@
-package ru.metro.tests;
+package ru.baucenter.tests;
 
-import ru.metro.config.Project;
-import ru.metro.helpers.AllureAttachments;
-import ru.metro.helpers.DriverSettings;
-import ru.metro.helpers.DriverUtils;
+import ru.baucenter.config.Project;
+import ru.baucenter.helpers.AllureAttachments;
+import ru.baucenter.helpers.DriverSettings;
+import ru.baucenter.helpers.DriverUtils;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.junit5.AllureJunit5;
