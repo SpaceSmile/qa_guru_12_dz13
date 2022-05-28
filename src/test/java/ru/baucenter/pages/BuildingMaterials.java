@@ -21,7 +21,7 @@ public class BuildingMaterials {
             basket = $(".page-header_cart"),
             resProduct = $("#product-count_number"),
             windowsMenu = $(".categories_table");
-    //$(byClassName("login_form_input_box")); top-nav_catalog_first-lvl-dd")
+    //
     @Step("Открываем сайт")
     public BuildingMaterials openPage() {
         open("https://baucenter.ru");
