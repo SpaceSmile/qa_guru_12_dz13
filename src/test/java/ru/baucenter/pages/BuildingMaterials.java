@@ -13,7 +13,7 @@ public class BuildingMaterials {
             deliveryCity = $(".city-dropdown"),
             deliveryMore = $("#city-more"),
             catalogMenu = $(".top-nav_catalog"),
-            buildingMaterials = $(".top-nav_catalog_head top-nav_catalog_head_ins.visible-xs"),
+            buildingMaterials = $("#menu-catalog"),
             windowFittings = $(".paddings"),
             fittingsProduct = $(".paddings"),
             lotProduct = $("#product-count_number"),
@@ -42,8 +42,6 @@ public class BuildingMaterials {
     @Step("Выбираем из общего каталога Стройматериалы")
     public BuildingMaterials catalogBuildingMaterials() {
         catalogMenu.click();
-        //actions().moveToElement(catalogMenu).clickAndHold();
-        //$("#menu-catalog").$(".top-nav_catalog_second-lvl-dd.top-nav_catalog_second-lvl-dd_mobile").$(byText("Стройматериалы")).contextClick();
         buildingMaterials.$(byText("Стройматериалы")).click();
         return this;
     }
