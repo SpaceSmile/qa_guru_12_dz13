@@ -13,11 +13,7 @@ public class HomePanel {
             panelActions = $(".header-wrap"),
             resPanel = $(".bl-wrapper"),
             cityOk = $("#city-ok"),
-            searchSetProduct = $(".catalog-list"),
-            setBasket = $(".product"),
-            basket = $(".page-header_cart"),
-            cookie = $(".cookie-popup__close"),
-            resProduct = $("#cart-available-items");
+            cookie = $(".cookie-popup__close");
 
     @Step("Открываем сайт")
     public HomePanel openPage() {

@@ -11,6 +11,7 @@ public class Home {
             delivery = $(".city-text"),
             deliveryCity = $(".city-dropdown"),
             deliveryHead = $(".well-bshadow"),
+            cityOk = $("#city-ok"),
             cookie = $(".cookie-popup__close"),
             deliveryResults = $("#show-city-tooltip");
 
@@ -23,9 +24,9 @@ public class Home {
 
     @Step("Выбираем город")
     public Home selectCity(String city) {
-        deliveryHead.click();
+        cityOk.click();
         delivery.click();
-        deliveryCity.$(byText(city)).click();
+        deliveryCity.find(byText(city)).click();
         return this;
     }
 
