@@ -35,6 +35,7 @@ public class MainTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверка ошибок в консоли разработчика на сайте baucenter.ru")
     void consoleShouldNotHaveErrorsTest() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         step("Открываем сайт 'https://baucenter.ru'", () ->
                 open("https://baucenter.ru"));
 
@@ -63,6 +64,7 @@ public class MainTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверка выбора товаров в категории 'Стройматериалы'")
     void automationMenu() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         buildingMaterials
                 .openPage()
                 .selectCity()
@@ -84,6 +86,7 @@ public class MainTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверка поиска товаров")
     void automationSearchMenu() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         homeSearch
                 .openPage()
                 .selectCity()
@@ -100,6 +103,7 @@ public class MainTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверка выбора раздела Акции!")
     void automationPanelActions() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         homePanel
                 .openPage()
                 .selectCity()
@@ -112,6 +116,7 @@ public class MainTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверка выбора раздела Новинки")
     void automationPanelNewProduct() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         homePanel
                 .openPage()
                 .selectCity()
@@ -124,6 +129,7 @@ public class MainTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверка выбора раздела Бонусы и скидки")
     void automationBonus() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         homePanel
                 .openPage()
                 .selectCity()
@@ -136,6 +142,7 @@ public class MainTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверка выбора раздела Сервис")
     void automationServices() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         homePanel
                 .openPage()
                 .selectCity()
@@ -148,6 +155,7 @@ public class MainTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверка выбора раздела Советы")
     void automationAdvices() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         homePanel
                 .openPage()
                 .selectCity()
