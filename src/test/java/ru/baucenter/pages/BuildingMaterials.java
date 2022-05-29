@@ -1,77 +1,97 @@
 package ru.baucenter.pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class BuildingMaterials {
     SelenideElement
-            deliveryCity = $(".city-dropdown"),
-            deliveryMore = $("#city-more"),
-            catalogMenu = $(".top-nav_catalog"),
+            resTitle = $("#h1_title"),
+            catalogMenu = $("[data-menu-event='mouseenter']"),
             buildingMaterials = $("#menu-catalog"),
             windowFittings = $(".paddings"),
-            fittingsProduct = $(".paddings"),
-            lotProduct = $("#product-count_number"),
-            setBasket = $(".product_right-col"),
+            fittingsProduct = $(".catalog-list"),
+            setBasket = $(".product"),
+            cityOk = $("#city-ok"),
             basket = $(".page-header_cart"),
-            resProduct = $("#product-count_number"),
-            windowsMenu = $(".categories_table");
-    //
+            resProduct = $("#cart-available-items"),
+            cookie = $(".cookie-popup__close"),
+            categoryMenu = $(".categories_table");
+    //open("https://baucenter.ru/");
+    //$("[data-menu-event='mouseenter']").click();
+    //$("#menu-catalog").find(byText("Стройматериалы")).click();
+    //$("#h1_title").shouldBe(Condition.visible);
+    //$$(".categories_row_item").find(Condition.text("Окна")).click();
     @Step("Открываем сайт")
     public BuildingMaterials openPage() {
         open("https://baucenter.ru");
+        cookie.click();
         return this;
     }
 
-    @Step("Нажимаем на выбор города")
-    public BuildingMaterials selectDelivery() {
-        deliveryMore.click();
-        return this;
-    }
-    @Step("Выбираем город")
+    @Step("Подтверждаем город")
     public BuildingMaterials selectCity() {
-        deliveryCity.$(byText("Новороссийск")).click();
+        cityOk.click();
         return this;
     }
 
     @Step("Выбираем из общего каталога Стройматериалы")
     public BuildingMaterials catalogBuildingMaterials() {
         catalogMenu.click();
-        buildingMaterials.$(byText("Стройматериалы")).click();
+        buildingMaterials.find(byText("Стройматериалы")).click();
         return this;
     }
+    @Step("Проверяем, что открылась страница Стройматериалы")
+    public BuildingMaterials resCatalogBuildingMaterials(String resCatalog) {
+        resTitle.shouldBe(text(resCatalog));
+        return this;
+    }
+
     @Step("Выбираем из в категории 'Стройматериалы' окна")
     public BuildingMaterials windowBuildingMaterials() {
-        windowsMenu.$(byText("Окна")).click();
+        $$(".categories_row_item").find(Condition.text("Окна")).click();
+        return this;
+    }
+
+    @Step("Проверяем, что открылась страница Окна")
+    public BuildingMaterials resCatalogWindow(String resCatalogWindow) {
+        resTitle.shouldBe(text(resCatalogWindow));
         return this;
     }
     @Step("Выбираем из в категории 'Окна' фурнитуру")
     public BuildingMaterials fittingsBuildingMaterials() {
-        windowFittings.$(byText("Фурнитура оконная")).click();
+        categoryMenu.find(byText("Фурнитура оконная")).click();
+        return this;
+    }
+
+    @Step("Проверяем, что открылась страница Фурнитура оконная")
+    public BuildingMaterials resCatalogFittings(String resCatalogFittings) {
+        resTitle.shouldBe(text(resCatalogFittings));
         return this;
     }
 
     @Step("Выбираем из списка товар")
     public BuildingMaterials productBuildingMaterials() {
-        fittingsProduct.$(byText("Ограничитель окон ПВХ 4 деления Tech-KREP белый")).click();
+        fittingsProduct.find(byText("Замок-блокиратор створки окон ПВХ нижний белый")).click();
+        //$$(".catalog_item").find(Condition.text("Замок-блокиратор створки окон ПВХ нижний белый")).click();
+        //catalog_item with-tooltip
         return this;
     }
 
-    @Step("Выбираем колличетсво товар")
-    public BuildingMaterials lotFittingsBuildingMaterials(String lot) {
-        lotProduct.doubleClick().clear();
-        lotProduct.setValue(lot);
+    @Step("Проверяем, что открылась страница выбранного товара")
+    public BuildingMaterials resCatalogFittingsProduct(String resProductFittings) {
+        setBasket.shouldBe(text(resProductFittings));
         return this;
     }
+
 
     @Step("Добавялем товар в корзину")
     public BuildingMaterials setBasketBuildingMaterials() {
-        setBasket.$(byText("Добавить в корзину")).click();
+        setBasket.find(byText("Добавить в корзину")).click();
         return this;
     }
 
@@ -87,14 +107,5 @@ public class BuildingMaterials {
                 .parent().shouldHave(text(value));
         return this;
     }
-    @Step("Проверяем колличество товара в коризне")
-    public BuildingMaterials resLotBasketBuildingMaterials(String resLotBasket, String value) {
-        resProduct.$(byText(resLotBasket))
-                .parent().shouldHave(text(value));
-        return this;
-    }
-
-
-
 }
 

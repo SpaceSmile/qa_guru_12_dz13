@@ -6,8 +6,9 @@ import io.qameta.allure.selenide.AllureSelenide;
 import ru.baucenter.helpers.DriverUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.baucenter.pages.DeliveryPage;
+import ru.baucenter.pages.Home;
 import ru.baucenter.pages.BuildingMaterials;
+import ru.baucenter.pages.SearchHome;
 
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
@@ -16,12 +17,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Owner("Седлачек В.С.")
 @Epic("Проверка сайта baucenter.ru")
 public class MainTests extends TestBase {
-    DeliveryPage deliveryPage = new DeliveryPage();
+    Home home = new Home();
     BuildingMaterials buildingMaterials = new BuildingMaterials();
+    SearchHome searchHome = new SearchHome();
+
     String
             city = "Новороссийск",
-            fittingsBuildingMaterials = "Ограничитель окон ПВХ 4 деления Tech-KREP белый",
-            resLotBasket = "12";
+            fittingsBuildingMaterials = "Замок-блокиратор створки окон ПВХ нижний белый",
+            searchProduct = "отбойный молоток",
+            selectedProduct = "Молоток отбойный STANLEY STHM10K-RU",
+            resSearchProduct = "Молоток отбойный STANLEY STHM10K-RU 1600 Вт SDS-Max 25 Дж";
 
     @Test
     @Feature("Проверка ошибок в консоли разработчика")
@@ -45,10 +50,9 @@ public class MainTests extends TestBase {
     @DisplayName("Проверка выбора города")
     void automationSearchCity() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        deliveryPage
+        home
                 .openPage()
-                .selectDelivery()
-                .selectCity()
+                .selectCity(city)
                 .resDelivery("Новороссийск",city);
     }
 
@@ -57,19 +61,35 @@ public class MainTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверка выбора товаров в категории 'Стройматериалы'")
     void automationMenu() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         buildingMaterials
                 .openPage()
-                .selectDelivery()
                 .selectCity()
                 .catalogBuildingMaterials()
+                .resCatalogBuildingMaterials("Стройматериалы")
                 .windowBuildingMaterials()
+                .resCatalogWindow("Окна")
                 .fittingsBuildingMaterials()
+                .resCatalogFittings("Фурнитура оконная")
                 .productBuildingMaterials()
-                .lotFittingsBuildingMaterials(resLotBasket)
+                .resCatalogFittingsProduct("Замок-блокиратор створки окон ПВХ нижний белый")
                 .setBasketBuildingMaterials()
                 .basketBuildingMaterials()
-                .resBasketBuildingMaterials("Ограничитель окон ПВХ 4 деления Tech-KREP белый", fittingsBuildingMaterials)
-                .resLotBasketBuildingMaterials("12",resLotBasket);
+                .resBasketBuildingMaterials("Замок-блокиратор створки окон ПВХ нижний белый", fittingsBuildingMaterials);
+    }
+
+    @Test
+    @Feature("Проверка выбора товаров по поиску на главной и добавления товара в корзину на сайте baucenter.ru")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Проверка поиска товаров")
+    void automationSearchMenu() {
+        searchHome
+                .openPage()
+                .selectCity()
+                .searchMain(searchProduct)
+                .resSearchPage("Результаты поиска по запросу")
+                .setSearchProduct(selectedProduct)
+                .setBasketSearchProduct()
+                .basketSearch()
+                .resBasketSearch("Молоток отбойный STANLEY STHM10K-RU 1600 Вт SDS-Max 25 Дж",resSearchProduct);
     }
 }
