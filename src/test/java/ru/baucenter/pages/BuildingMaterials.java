@@ -21,11 +21,7 @@ public class BuildingMaterials {
             resProduct = $("#cart-available-items"),
             cookie = $(".cookie-popup__close"),
             categoryMenu = $(".categories_table");
-    //open("https://baucenter.ru/");
-    //$("[data-menu-event='mouseenter']").click();
-    //$("#menu-catalog").find(byText("Стройматериалы")).click();
-    //$("#h1_title").shouldBe(Condition.visible);
-    //$$(".categories_row_item").find(Condition.text("Окна")).click();
+
     @Step("Открываем сайт")
     public BuildingMaterials openPage() {
         open("https://baucenter.ru");
@@ -77,8 +73,6 @@ public class BuildingMaterials {
     @Step("Выбираем из списка товар")
     public BuildingMaterials productBuildingMaterials() {
         fittingsProduct.find(byText("Замок-блокиратор створки окон ПВХ нижний белый")).click();
-        //$$(".catalog_item").find(Condition.text("Замок-блокиратор створки окон ПВХ нижний белый")).click();
-        //catalog_item with-tooltip
         return this;
     }
 

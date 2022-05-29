@@ -8,7 +8,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.baucenter.pages.Home;
 import ru.baucenter.pages.BuildingMaterials;
-import ru.baucenter.pages.SearchHome;
+import ru.baucenter.pages.HomePanel;
+import ru.baucenter.pages.HomeSearch;
 
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
@@ -19,7 +20,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class MainTests extends TestBase {
     Home home = new Home();
     BuildingMaterials buildingMaterials = new BuildingMaterials();
-    SearchHome searchHome = new SearchHome();
+    HomeSearch homeSearch = new HomeSearch();
+    HomePanel homePanel = new HomePanel();
 
     String
             city = "Новороссийск",
@@ -82,7 +84,7 @@ public class MainTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Проверка поиска товаров")
     void automationSearchMenu() {
-        searchHome
+        homeSearch
                 .openPage()
                 .selectCity()
                 .searchMain(searchProduct)
@@ -91,5 +93,65 @@ public class MainTests extends TestBase {
                 .setBasketSearchProduct()
                 .basketSearch()
                 .resBasketSearch("Молоток отбойный STANLEY STHM10K-RU 1600 Вт SDS-Max 25 Дж",resSearchProduct);
+    }
+
+    @Test
+    @Feature("Проверка выбора разделов на сайте baucenter.ru")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Проверка выбора раздела Акции!")
+    void automationPanelActions() {
+        homePanel
+                .openPage()
+                .selectCity()
+                .selectActions()
+                .resActions("Акции");
+    }
+
+    @Test
+    @Feature("Проверка выбора разделов на сайте baucenter.ru")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Проверка выбора раздела Новинки")
+    void automationPanelNewProduct() {
+        homePanel
+                .openPage()
+                .selectCity()
+                .selectNewProducts()
+                .resNewProducts("Новинки каталога");
+    }
+
+    @Test
+    @Feature("Проверка выбора разделов на сайте baucenter.ru")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Проверка выбора раздела Бонусы и скидки")
+    void automationBonus() {
+        homePanel
+                .openPage()
+                .selectCity()
+                .selectBonus()
+                .resBonus("Бонусы и скидки");
+    }
+
+    @Test
+    @Feature("Проверка выбора разделов на сайте baucenter.ru")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Проверка выбора раздела Сервис")
+    void automationServices() {
+        homePanel
+                .openPage()
+                .selectCity()
+                .selectServices()
+                .resServices("Сервис");
+    }
+
+    @Test
+    @Feature("Проверка выбора разделов на сайте baucenter.ru")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Проверка выбора раздела Советы")
+    void automationAdvices() {
+        homePanel
+                .openPage()
+                .selectCity()
+                .selectAdvices()
+                .resAdvices("Советы");
     }
 }
