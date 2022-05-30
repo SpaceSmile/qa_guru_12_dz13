@@ -15,16 +15,16 @@
 
 ## :computer: Технологии и инструменты
 <p align="center">
-<img width="6%" title="IntelliJ IDEA" src="resources/images/logo/Intelij_IDEA.svg">
-<img width="6%" title="Java" src="resources/images/logo/Java.svg">
-<img width="6%" title="Selenide" src="resources/images/logo/Selenide.svg">
-<img width="6%" title="Selenoid" src="resources/images/logo/Selenoid.svg">
-<img width="6%" title="Allure Report" src="resources/images/logo/Allure_Report.svg">
-<img width="6%" title="Gradle" src="resources/images/logo/Gradle.svg">
-<img width="6%" title="JUnit5" src="resources/images/logo/JUnit5.svg">
-<img width="6%" title="GitHub" src="resources/images/logo/GitHub.svg">
-<img width="6%" title="Jenkins" src="resources/images/logo/Jenkins.svg">
-<img width="6%" title="Telegram" src="resources/images/logo/Telegram.svg">
+<img width="6%" title="IntelliJ IDEA" src="test/resources/images/logo/Intelij_IDEA.svg">
+<img width="6%" title="Java" src="test/resources/images/logo/Java.svg">
+<img width="6%" title="Selenide" src="test/resources/images/logo/Selenide.svg">
+<img width="6%" title="Selenoid" src="test/resources/images/logo/Selenoid.svg">
+<img width="6%" title="Allure Report" src="test/resources/images/logo/Allure_Report.svg">
+<img width="6%" title="Gradle" src="test/resources/images/logo/Gradle.svg">
+<img width="6%" title="JUnit5" src="test/resources/images/logo/JUnit5.svg">
+<img width="6%" title="GitHub" src="test/resources/images/logo/GitHub.svg">
+<img width="6%" title="Jenkins" src="test/resources/images/logo/Jenkins.svg">
+<img width="6%" title="Telegram" src="test/resources/images/logo/Telegram.svg">
 </p>
 
 ## :notebook_with_decorative_cover: Реализованные проверки
@@ -37,7 +37,7 @@
 ## :electric_plug: Сборка в Jenkins
 ### <a target="_blank" href="https://jenkins.autotests.cloud/job/qa_guru_12_dz13/">Сборка в Jenkins</a>
 <p align="center">
-<img title="Jenkins Dashboard" src="resources/images/screenshots/jenkins.jpg">
+<img title="Jenkins Dashboard" src="test/resources/images/screenshots/jenkins.jpg">
 </p>  
 
 ## :arrow_forward: Запуск из терминала
