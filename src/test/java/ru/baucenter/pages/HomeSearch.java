@@ -6,15 +6,14 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class HomeSearch {
     SelenideElement
             searchHome = $("#title-search-input"),
             resSearch = $("#h1_title"),
             cityOk = $("#city-ok"),
-            searchSetProduct = $(".catalog-list"),
+            searchSetProduct = $(".catalog-right"),
             setBasket = $(".product"),
             basket = $(".page-header_cart"),
             cookie = $(".cookie-popup__close"),
@@ -29,12 +28,14 @@ public class HomeSearch {
     @Step("Подтверждаем город")
     public HomeSearch selectCity() {
         cityOk.click();
+        //sleep(10000);
         return this;
     }
     @Step("Набираем текст для поиск товара")
     public HomeSearch searchMain(String searchProduct) {
         searchHome.click();
         searchHome.setValue(searchProduct).pressEnter();
+        //sleep(10000);
         return this;
     }
     @Step("Проверяем загрузку страницы поиска")
@@ -45,12 +46,14 @@ public class HomeSearch {
     @Step("Выбираем из списка товар")
     public HomeSearch setSearchProduct(String selectedProduct) {
         searchSetProduct.$(withText(selectedProduct)).click();
+        //sleep(10000);
         return this;
     }
 
     @Step("Добавялем товар в корзину")
     public HomeSearch setBasketSearchProduct() {
         setBasket.find(byText("Добавить в корзину")).click();
+        //sleep(10000);
         return this;
     }
 
