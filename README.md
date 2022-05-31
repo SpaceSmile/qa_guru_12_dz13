@@ -46,7 +46,7 @@
 gradle clean test
 ```
 ## :gear: Запуск тестов с выбором параметров
-<img title="Jenkins ParamStart" src="resources/images/screenshots/jenkinsparam.jpg">
+<img title="Jenkins ParamStart" src="src/test/resources/images/screenshots/jenkinsparam.jpg">
 
 Удаленный запуск:
 ```
@@ -77,17 +77,12 @@ test
 ## :open_book: Allure отчет
 - ### Главный экран отчета
 <p align="center">
-<img title="Allure Overview Dashboard" src="images/screenshots/4321.png">
+<img title="Allure Overview Dashboard" src="src/test/resources/images/screenshots/allurehome.jpg">
 </p>
 
 - ### Страница с проведенными тестами
 <p align="center">
-<img title="Allure Test Page" src="images/screenshots/1234.png">
-</p>
-
-## :hammer: Allure Test Ops отчет
-<p align="center">
-<img title="Allure Test Ops Launch" src="images/screenshots/2222.png">
+<img title="Allure Test Page" src="src/test/resources/images/screenshots/allurestep.jpg">
 </p>
 
 ## :wrench: Интеграция с Jira

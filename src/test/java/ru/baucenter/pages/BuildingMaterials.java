@@ -69,20 +69,20 @@ public class BuildingMaterials {
     @Step("Проверяем, что открылась страница Фурнитура оконная")
     public BuildingMaterials resCatalogFittings(String resCatalogFittings) {
         resTitle.shouldBe(text(resCatalogFittings));
-        //sleep(10000);
+        sleep(10000);
         return this;
     }
 
     @Step("Выбираем из списка товар")
     public BuildingMaterials productBuildingMaterials() {
         fittingsProduct.find(withText("Ручка балконная двусторонняя Фабрика замков")).click();
-        sleep(10000);
         return this;
     }
 
     @Step("Проверяем, что открылась страница выбранного товара")
     public BuildingMaterials resCatalogFittingsProduct(String resProductFittings) {
         setBasket.shouldBe(text(resProductFittings));
+        sleep(10000);
         return this;
     }
 
