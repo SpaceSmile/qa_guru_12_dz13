@@ -76,7 +76,7 @@ public class BuildingMaterials {
     @Step("Выбираем из списка товар")
     public BuildingMaterials productBuildingMaterials() {
         fittingsProduct.find(withText("Ручка балконная двусторонняя Фабрика замков")).click();
-        //sleep(10000);
+        sleep(10000);
         return this;
     }
 

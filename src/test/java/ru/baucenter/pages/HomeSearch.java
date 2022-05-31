@@ -35,7 +35,7 @@ public class HomeSearch {
     public HomeSearch searchMain(String searchProduct) {
         searchHome.click();
         searchHome.setValue(searchProduct).pressEnter();
-        //sleep(10000);
+        sleep(10000);
         return this;
     }
     @Step("Проверяем загрузку страницы поиска")
@@ -46,7 +46,7 @@ public class HomeSearch {
     @Step("Выбираем из списка товар")
     public HomeSearch setSearchProduct(String selectedProduct) {
         searchSetProduct.$(withText(selectedProduct)).click();
-        //sleep(10000);
+        sleep(5000);
         return this;
     }
 
