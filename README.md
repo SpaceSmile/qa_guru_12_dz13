@@ -85,18 +85,13 @@ test
 <img title="Allure Test Page" src="src/test/resources/images/screenshots/allurestep.jpg">
 </p>
 
-## :wrench: Интеграция с Jira
-<p align="center">
-<img title="Jira Issue Dashboard" src="images/screenshots/jira.png">
-</p>
-
 ## :robot: Отчет в Telegram
 <p align="center">
-<img title="Telegram notification message" src="images/screenshots/Screenshot_2.png">
+<img title="Telegram notification message" src="src/test/resources/images/screenshots/telegram.jpg">
 </p>
 
 ## :film_projector: Видео примеры прохождения тестов
 > К каждому тесту в отчете прилагается видео. Одно из таких видео представлено ниже.
 <p align="center">
-  <img title="Selenoid Video" src="images/screenshots/e6bfd1a5ec0643a6.gif">
+  <img title="Selenoid Video" src="rc/test/resources/images/screenshots/video.gif">
 </p>
