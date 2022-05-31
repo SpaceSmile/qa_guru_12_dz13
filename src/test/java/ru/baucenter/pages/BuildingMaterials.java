@@ -6,6 +6,7 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class BuildingMaterials {
@@ -20,6 +21,7 @@ public class BuildingMaterials {
             basket = $(".page-header_cart"),
             resProduct = $("#cart-available-items"),
             cookie = $(".cookie-popup__close"),
+            setBasketProduct = $(".product_right-col"),
             categoryMenu = $(".categories_table");
 
     @Step("Открываем сайт")
@@ -67,12 +69,14 @@ public class BuildingMaterials {
     @Step("Проверяем, что открылась страница Фурнитура оконная")
     public BuildingMaterials resCatalogFittings(String resCatalogFittings) {
         resTitle.shouldBe(text(resCatalogFittings));
+        //sleep(10000);
         return this;
     }
 
     @Step("Выбираем из списка товар")
     public BuildingMaterials productBuildingMaterials() {
-        fittingsProduct.find(byText("Замок-блокиратор створки окон ПВХ нижний белый")).click();
+        fittingsProduct.find(withText("Ручка балконная двусторонняя Фабрика замков")).click();
+        //sleep(10000);
         return this;
     }
 
@@ -82,10 +86,9 @@ public class BuildingMaterials {
         return this;
     }
 
-
     @Step("Добавялем товар в корзину")
     public BuildingMaterials setBasketBuildingMaterials() {
-        setBasket.find(byText("Добавить в корзину")).click();
+        setBasketProduct.find(byText("Добавить в корзину")).click();
         return this;
     }
 

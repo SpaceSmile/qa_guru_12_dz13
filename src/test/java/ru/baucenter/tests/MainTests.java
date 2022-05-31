@@ -25,7 +25,7 @@ public class MainTests extends TestBase {
 
     String
             city = "Новороссийск",
-            fittingsBuildingMaterials = "Замок-блокиратор створки окон ПВХ нижний белый",
+            fittingsBuildingMaterials = "Ручка балконная двусторонняя Фабрика замков 2WH ET с замком",
             searchProduct = "отбойный молоток",
             selectedProduct = "Молоток отбойный STANLEY STHM10K-RU",
             resSearchProduct = "Молоток отбойный STANLEY STHM10K-RU 1600 Вт SDS-Max 25 Дж";
@@ -72,10 +72,10 @@ public class MainTests extends TestBase {
                 .fittingsBuildingMaterials()
                 .resCatalogFittings("Фурнитура оконная")
                 .productBuildingMaterials()
-                .resCatalogFittingsProduct("Замок-блокиратор створки окон ПВХ нижний белый")
+                .resCatalogFittingsProduct("Ручка балконная двусторонняя Фабрика замков 2WH ET с замком")
                 .setBasketBuildingMaterials()
                 .basketBuildingMaterials()
-                .resBasketBuildingMaterials("Замок-блокиратор створки окон ПВХ нижний белый", fittingsBuildingMaterials);
+                .resBasketBuildingMaterials("Ручка балконная двусторонняя Фабрика замков 2WH ET с замком", fittingsBuildingMaterials);
     }
 
     @Test

@@ -21,9 +21,12 @@ public class DriverSettings {
 //        Configuration.baseUrl = App.config.webUrl();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("sessionTimeout","20m");
+
         ChromeOptions chromeOptions = new ChromeOptions();
 
         chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-infobars");
         chromeOptions.addArguments("--disable-popup-blocking");
         chromeOptions.addArguments("--disable-notifications");
         chromeOptions.addArguments("--lang=en-en");

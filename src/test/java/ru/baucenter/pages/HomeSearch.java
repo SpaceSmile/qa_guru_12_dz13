@@ -17,6 +17,7 @@ public class HomeSearch {
             setBasket = $(".product"),
             basket = $(".page-header_cart"),
             cookie = $(".cookie-popup__close"),
+            setBasketProduct = $(".product_right-col"),
             resProduct = $("#cart-available-items");
     @Step("Открываем сайт")
     public HomeSearch openPage() {
@@ -28,7 +29,6 @@ public class HomeSearch {
     @Step("Подтверждаем город")
     public HomeSearch selectCity() {
         cityOk.click();
-        //sleep(10000);
         return this;
     }
     @Step("Набираем текст для поиск товара")
@@ -52,8 +52,7 @@ public class HomeSearch {
 
     @Step("Добавялем товар в корзину")
     public HomeSearch setBasketSearchProduct() {
-        setBasket.find(byText("Добавить в корзину")).click();
-        //sleep(10000);
+        setBasketProduct.find(byText("Добавить в корзину")).click();
         return this;
     }
 
