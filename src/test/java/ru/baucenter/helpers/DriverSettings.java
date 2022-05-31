@@ -15,6 +15,8 @@ public class DriverSettings {
         Configuration.browserVersion = Project.config.browserVersion();
         Configuration.browserSize = Project.config.browserSize();
         Configuration.pageLoadTimeout = 10_000;
+        Configuration.pageLoadStrategy = "eager";
+
 
 //        Configuration.baseUrl = App.config.webUrl();
 
